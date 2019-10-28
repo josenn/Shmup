@@ -120,26 +120,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1295183390 stripped
+--- !u!1 &159076827
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7471670950642685877, guid: 6734463d5080a4f4c831acd660d40b5a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7471670950828115544}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1295183391
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159076829}
+  - component: {fileID: 159076828}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &159076828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295183390}
+  m_GameObject: {fileID: 159076827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ba8e992b136bc946823763f6e754770, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f31e2f5e2156d4f9bc4f179c0c28ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfig: {fileID: 11400000, guid: 5d943cd6d5a0626478072e20945b8a62, type: 2}
-  moveSpeed: 2
+  waveConfigs:
+  - {fileID: 11400000, guid: ce35d343b82714e44af285fb7b1baf87, type: 2}
+  - {fileID: 11400000, guid: 5d943cd6d5a0626478072e20945b8a62, type: 2}
+--- !u!4 &159076829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159076827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2127779, y: -0.02542162, z: -12.478973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627524489
 GameObject:
   m_ObjectHideFlags: 0
