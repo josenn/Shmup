@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8676217839558833151}
   - component: {fileID: 8676217839558833150}
   - component: {fileID: 8676217839558833149}
-  m_Layer: 0
+  - component: {fileID: 738060707}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,5 +95,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   padding: 0.5
+  health: 200
+  laserPrefab: {fileID: 7442701438808790991, guid: ad493a96682d5584fa83f9cb6be26621,
+    type: 3}
   projectileSpeed: 20
-  laserPrefab: {fileID: 0}
+  projectileFiringPeriod: 0.1
+--- !u!60 &738060707
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676217839558833148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.99, y: 0.75}
+    newSize: {x: 0.99, y: 0.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.48832002, y: 0.081581116}
+      - {x: 0.3551587, y: -0.018578053}
+      - {x: 0.12166008, y: 0.108082294}
+      - {x: 0.08490078, y: 0.375}
+      - {x: -0.084960364, y: 0.37165976}
+      - {x: -0.12162037, y: 0.121659756}
+      - {x: -0.35517845, y: -0.021838665}
+      - {x: -0.4816402, y: 0.07161999}
+      - {x: -0.46160057, y: -0.24834013}
+      - {x: -0.4216601, y: -0.22822142}
+      - {x: -0.3862804, y: -0.20665693}
+      - {x: -0.3024055, y: -0.24284029}
+      - {x: -0.13164021, y: -0.27496004}
+      - {x: -0.07496029, y: -0.37499952}
+      - {x: 0.084960304, y: -0.37499952}
+      - {x: 0.10744333, y: -0.32629728}
+      - {x: 0.1395365, y: -0.27586508}
+      - {x: 0.255, y: -0.25494146}
+      - {x: 0.41492075, y: -0.21156073}
+      - {x: 0.46160054, y: -0.24831915}
