@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/* This class is used to shred excess objects (mainly enemy and player projectiles)
+ * 
+ * If an object has surpassed the play area it gets destroyed
+ * 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
