@@ -7,9 +7,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //config params
+    // The header attribute adds a header above the variables to keep them better organized!
+    // Config params
+    [Header("Player")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
+    [SerializeField] int health = 200;
+
+
+    [Header("Projectile")]
+    //References
+    [SerializeField] GameObject laserPrefab;
+
+    // Projectile values
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.1f;
 
@@ -19,9 +29,6 @@ public class Player : MonoBehaviour
     float xMax;
     float yMin;
     float yMax;
-
-    //references
-    [SerializeField] GameObject laserPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +43,7 @@ public class Player : MonoBehaviour
         Fire();
     }
 
-    //might need to change and merge these 2 later who knows
+    // Might need to change and merge these 2 later who knows
     private void Move()
     {
         //delta is referring to a change in where we are and where we want to be
@@ -83,5 +90,22 @@ public class Player : MonoBehaviour
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+
+        ProcessHit(damageDealer);
+    }
+
+    private void ProcessHit(DamageDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
