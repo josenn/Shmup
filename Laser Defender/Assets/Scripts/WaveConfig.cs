@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//we want to create ourselves a menu so that we can add this to our scene
+// We want to create ourselves a menu so that we can add this to our scene
 [CreateAssetMenu(menuName = "Enemy Wave Config")]
 public class WaveConfig : ScriptableObject
 {
