@@ -95,7 +95,8 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-
+        // Protects against potential null references where the data may not exist
+        if (!damageDealer) { return; }
         ProcessHit(damageDealer);
     }
 
