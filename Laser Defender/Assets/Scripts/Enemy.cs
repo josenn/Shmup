@@ -65,6 +65,8 @@ public class Enemy : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
 
+        damageDealer.Hit();
+
         // To fix cases of going into the negatives by mistake we add the < sign
         if (health <= 0)
         {
