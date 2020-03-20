@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     // Might need to change and merge these 2 later who knows
     private void Move()
     {
-        //delta is referring to a change in where we are and where we want to be
+        // Delta is referring to a change in where we are and where we want to be
         var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
 
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 
         transform.position = new Vector2(newXPos, newYPos);
 
-        //TODO lots of refactoring and commenting (on other projects too)
+        // TODO lots of refactoring and commenting
     }
 
     private void Fire()
