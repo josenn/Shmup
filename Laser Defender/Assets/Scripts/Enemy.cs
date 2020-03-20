@@ -1,9 +1,19 @@
-﻿using System.Collections;
+﻿/* This class represents enemies in the game
+ * 
+ * Enemies have health, a speed at which their projectiles move, and time between the next shot
+ * 
+ * Which is a follow between a minTimeBetweenShots and a MaxTimeBetweenShots
+ * 
+ * They have the ability to fire as well as the ability to be hit and be destroyed
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // Information about the enemy
     [Header("Enemy")]
     [SerializeField] float health = 1000F;
     [SerializeField] float projectileSpeed = 5f;
@@ -30,7 +40,7 @@ public class Enemy : MonoBehaviour
     private void CountDownAndShoot()
     {
         // Our shot counter needs to be going down for however long our frame takes
-        shotTimer -= Time.deltaTime; //the time that our frame takes
+        shotTimer -= Time.deltaTime; // The time that our frame takes
         
         if (shotTimer <= 0f)
         {
