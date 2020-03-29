@@ -1,4 +1,11 @@
-﻿//TODO research and try to truly understand the code. Take your time. It's okay!
+﻿/* This class represents a player
+ * 
+ * A player has a move speed, health, projectile speed, how often the projectile fires, controls, etc etc
+ * 
+ * Also has a function to keep the player within the boundaries of the play area
+ * 
+ * More explanation will be given on a function to function basis (lot to unpack here)
+*/
 
 using System;
 using System.Collections;
@@ -8,7 +15,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // The header attribute adds a header above the variables to keep them better organized!
-    // Config params
+    // Information about the player
     [Header("Player")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
@@ -16,7 +23,7 @@ public class Player : MonoBehaviour
 
 
     [Header("Projectile")]
-    //References
+    // References
     [SerializeField] GameObject laserPrefab;
 
     // Projectile values
@@ -74,7 +81,7 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            //creating this as a gameobject
+            // Creating this as a gameobject
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
 
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
@@ -95,8 +102,10 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        
         // Protects against potential null references where the data may not exist
         if (!damageDealer) { return; }
+        
         ProcessHit(damageDealer);
     }
 
@@ -104,8 +113,15 @@ public class Player : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
 
+        // Destroy the laser
         damageDealer.Hit();
+        
+        DestroyPlayer();
+    }
 
+    // When the player's health is low enough destroy them
+    private void DestroyPlayer()
+    {
         if (health <= 0)
         {
             Destroy(gameObject);
