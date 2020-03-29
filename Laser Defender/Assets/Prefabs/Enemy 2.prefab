@@ -113,6 +113,8 @@ MonoBehaviour:
   maxTimeBetweenShots: 3
   laserPrefab: {fileID: 1769888154480448555, guid: 9b1aba2137c89b341a4e9059f1465822,
     type: 3}
+  particleEffectPrefab: {fileID: 2346155108926312555, guid: fb3746126d8ea0a49882d8dc4c7cf9b8,
+    type: 3}
 --- !u!58 &6883773493347907860
 CircleCollider2D:
   m_ObjectHideFlags: 0
