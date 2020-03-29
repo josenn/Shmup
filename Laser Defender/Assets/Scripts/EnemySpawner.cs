@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return StartCoroutine(SpawnAllWaves());
         } 
-        while (looping); //another way of saying while looping = true
+        while (looping); // Another way of saying while looping = true
     }
     private IEnumerator SpawnAllWaves()
     {
@@ -32,10 +32,11 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int enemyCount = 0; enemyCount < waveConfig.GetNumberOfEnemies(); enemyCount++)
         {
-            //quaternion identity just says "we don't need rotation just use the rotation you already have.
+            // Quaternion identity just says "we don't need rotation just use the rotation you already have."
             var newEnemy =  Instantiate(waveConfig.GetEnemyPrefab(), waveConfig.GetWaypoints()[0].transform.position, Quaternion.identity);
 
             newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
+            
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns() * waveConfig.GetSpawnRandomFactor());
         }
     }
