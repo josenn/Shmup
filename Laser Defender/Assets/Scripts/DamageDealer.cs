@@ -6,7 +6,10 @@
  * 
  * A function to get said damage (so other classes can know how much damage to take)
  * 
- * And a function to process the hit of an object
+ * 
+ * DamageDealer is placed on player and enemy lasers (but not necessarily limited to them)
+ * 
+ * So the Hit function is actually to destroy a laser upon contact with the player or enemy
 */
 
 using System.Collections;
