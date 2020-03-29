@@ -10,7 +10,7 @@ public class WaveConfig : ScriptableObject
     [SerializeField] GameObject pathPrefab;
     [SerializeField] float timeBetweenSpawns = 0.5f;
 
-    //makes the game feel a little more organic and not as predictable (do this as often as you can)
+    // Makes the game feel a little more organic and not as predictable (do this as often as you can)
     [SerializeField] float spawnRandomFactor = 0.3f;
     [SerializeField] int numberOfEnemies = 5;
     [SerializeField] float moveSpeed = 2f;
