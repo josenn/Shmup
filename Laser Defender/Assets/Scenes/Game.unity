@@ -353,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 6102564817094056941, guid: 16186fd9a60396a49b7642a01fc55b8d,
         type: 3}
       propertyPath: m_Name
-      value: Star Field 2
+      value: Star Field Close
       objectReference: {fileID: 0}
     - target: {fileID: 3824156576981904423, guid: 16186fd9a60396a49b7642a01fc55b8d,
         type: 3}
@@ -412,108 +412,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
         type: 3}
-      propertyPath: ShapeModule.type
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 15.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: prewarm
+      propertyPath: InitialModule.startSpeed.minScalar
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
         type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startSize.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startColor.minMaxState
+      propertyPath: InitialModule.startSpeed.scalar
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
         type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.85882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.38431373
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.38431373
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startColor.minColor.r
-      value: 0.93333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startColor.minColor.g
-      value: 0.37254903
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startColor.minColor.b
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startColor.minColor.a
-      value: 0.15294118
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
         type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1281656916709950091, guid: 16186fd9a60396a49b7642a01fc55b8d,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 3
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16186fd9a60396a49b7642a01fc55b8d, type: 3}
@@ -991,7 +911,7 @@ PrefabInstance:
     - target: {fileID: 6623189672001648887, guid: 462614aa0b6dec74f8083cd2941f2c9d,
         type: 3}
       propertyPath: m_Name
-      value: Star Field
+      value: Star Field Far
       objectReference: {fileID: 0}
     - target: {fileID: 6623189672001648884, guid: 462614aa0b6dec74f8083cd2941f2c9d,
         type: 3}
@@ -1047,6 +967,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623189672001648885, guid: 462614aa0b6dec74f8083cd2941f2c9d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623189672001648885, guid: 462614aa0b6dec74f8083cd2941f2c9d,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623189672001648885, guid: 462614aa0b6dec74f8083cd2941f2c9d,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623189672001648885, guid: 462614aa0b6dec74f8083cd2941f2c9d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 462614aa0b6dec74f8083cd2941f2c9d, type: 3}
