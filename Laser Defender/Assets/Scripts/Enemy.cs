@@ -7,6 +7,7 @@
  * They have the ability to fire as well as the ability to be hit and be destroyed
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,10 +26,14 @@ public class Enemy : MonoBehaviour
     // References
     [SerializeField] GameObject laserPrefab;
 
+    [Header("Particle Effect")]
+    [SerializeField] GameObject particleEffectPrefab;
+    [SerializeField] float durationOfExplosion = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        shotTimer = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        shotTimer = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
     // Update is called once per frame
@@ -53,7 +58,7 @@ public class Enemy : MonoBehaviour
 
     private void ShotTimerReset()
     {
-        shotTimer = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        shotTimer = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
     private void Fire()
@@ -68,7 +73,9 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        
         if(!damageDealer) { return; } // More tidy to keep braces on this line in this case
+        
         ProcessHit(damageDealer);
     }
 
@@ -78,10 +85,25 @@ public class Enemy : MonoBehaviour
 
         damageDealer.Hit();
 
+        DestroyEnemy();
+    }
+
+    // When the enemy's health is low enough destroy them
+    private void DestroyEnemy()
+    {
         // To fix cases of going into the negatives by mistake we add the < sign
         if (health <= 0)
         {
             Destroy(gameObject);
+            TriggerParticleEffect();
         }
+    }
+
+    // Creates the particle effect that is triggered when an enemy is destroyed
+    private void TriggerParticleEffect()
+    {
+        GameObject explosion = Instantiate(particleEffectPrefab, transform.position, transform.rotation);
+
+        Destroy(explosion, durationOfExplosion);
     }
 }
