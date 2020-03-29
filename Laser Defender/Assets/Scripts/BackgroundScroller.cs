@@ -28,7 +28,7 @@ public class BackgroundScroller : MonoBehaviour
     void Update()
     {
         // mainTextureOffset is how we get access to the main texture offset of the object's material
-        // This allows us to make the textue move
+        // This allows us to make the texture move
         material.mainTextureOffset += (offset * Time.deltaTime);
     }
 }
