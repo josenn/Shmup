@@ -29,11 +29,19 @@ public class Enemy : MonoBehaviour
     [Header("Particle Effect")]
     [SerializeField] GameObject particleEffectPrefab;
     [SerializeField] float durationOfExplosion = 1.0f;
+    
+    [Header("Audio")]
+    [SerializeField] AudioClip enemyDestroy;
+
+    // AudioSource reference
+    AudioSource enemyAudioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         shotTimer = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+
+        enemyAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,12 +54,13 @@ public class Enemy : MonoBehaviour
     {
         // Our shot counter needs to be going down for however long our frame takes
         shotTimer -= Time.deltaTime; // The time that our frame takes
-
+        
         if (shotTimer <= 0f)
         {
             Fire();
             ShotTimerReset();
         }
+
         
     }
 
@@ -95,6 +104,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             TriggerParticleEffect();
+      
         }
     }
 
@@ -105,4 +115,11 @@ public class Enemy : MonoBehaviour
 
         Destroy(explosion, durationOfExplosion);
     }
+
+    // Controls all the audio for the enemy
+    private void PlayAudio()
+    {
+        enemyAudioSource.PlayOneShot(enemyDestroy);
+    }
+
 }
