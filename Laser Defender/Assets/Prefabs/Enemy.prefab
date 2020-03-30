@@ -116,10 +116,13 @@ MonoBehaviour:
     type: 3}
   particleEffectPrefab: {fileID: 2346155108926312555, guid: fb3746126d8ea0a49882d8dc4c7cf9b8,
     type: 3}
+<<<<<<< HEAD
   durationOfExplosion: 1
   enemyDestroy:
   - {fileID: 8300000, guid: 565ca7209ef9bc1469e145cf36607f3e, type: 3}
   - {fileID: 8300000, guid: 7ca4c00d2be96c444ab0fe09fe203f0d, type: 3}
+=======
+>>>>>>> parent of 10733d1... Made names more descriptive
 --- !u!58 &6514149713958316590
 CircleCollider2D:
   m_ObjectHideFlags: 0
