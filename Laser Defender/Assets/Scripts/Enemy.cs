@@ -46,13 +46,12 @@ public class Enemy : MonoBehaviour
     {
         // Our shot counter needs to be going down for however long our frame takes
         shotTimer -= Time.deltaTime; // The time that our frame takes
-        
+
         if (shotTimer <= 0f)
         {
             Fire();
             ShotTimerReset();
         }
-
         
     }
 
