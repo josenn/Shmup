@@ -30,6 +30,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject particleEffectPrefab;
     [SerializeField] float durationOfExplosion = 1.0f;
 
+    [Header("Audio")]
+    [Tooltip("The sound that will be played when an enemy is destroyed")]
+    [SerializeField] AudioClip enemyDestroyClip;
+    [Tooltip("The sound that will be made when the enemy shoots")]
+    [SerializeField] AudioClip enemyShootClip;
+    [Tooltip("he sound that will be made when an enemy is hit by a player")]
+    [SerializeField] AudioClip enemyHitClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +74,7 @@ public class Enemy : MonoBehaviour
         GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
 
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        TriggerEnemyShootSound(laser);
     }
 
     // "Other" means the game object that collided with this thing
@@ -74,7 +83,9 @@ public class Enemy : MonoBehaviour
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
         
         if(!damageDealer) { return; } // More tidy to keep braces on this line in this case
-        
+
+        TriggerEnemyHitSound();
+
         ProcessHit(damageDealer);
     }
 
@@ -95,6 +106,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             TriggerParticleEffect();
+            TriggerEnemyDestroySound();
         }
     }
 
@@ -104,5 +116,24 @@ public class Enemy : MonoBehaviour
         GameObject explosion = Instantiate(particleEffectPrefab, transform.position, transform.rotation);
 
         Destroy(explosion, durationOfExplosion);
+    }
+
+    private void TriggerEnemyShootSound(GameObject laser)
+    {
+        AudioSource.PlayClipAtPoint(enemyShootClip, laser.transform.position);
+    }
+
+    // Plays the sound made when an enemy is destroyed
+    private void TriggerEnemyDestroySound()
+    {
+        AudioSource.PlayClipAtPoint(enemyDestroyClip, transform.position);
+    }
+
+    private void TriggerEnemyHitSound()
+    {
+        if(health > 0)
+        {
+            AudioSource.PlayClipAtPoint(enemyHitClip, transform.position);
+        }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -760095235022000318}
   - component: {fileID: 6883773493347907860}
   m_Layer: 9
-  m_Name: Enemy 3
+  m_Name: enemyGreen01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,6 +116,9 @@ MonoBehaviour:
   particleEffectPrefab: {fileID: 2346155108926312555, guid: fb3746126d8ea0a49882d8dc4c7cf9b8,
     type: 3}
   durationOfExplosion: 1
+  enemyDestroyClip: {fileID: 8300000, guid: 64bf09f4a4029b940ae6059f8cc10903, type: 3}
+  enemyShootClip: {fileID: 8300000, guid: 7ca4c00d2be96c444ab0fe09fe203f0d, type: 3}
+  enemyHitClip: {fileID: 8300000, guid: 565ca7209ef9bc1469e145cf36607f3e, type: 3}
 --- !u!58 &6883773493347907860
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1070,5 +1070,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8676217839558833149, guid: afa8e078490d7574489fba29576abbaa,
+        type: 3}
+      propertyPath: playerDestroyClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e198abca881ea64dae7e65c312f4105, type: 3}
+    - target: {fileID: 8676217839558833149, guid: afa8e078490d7574489fba29576abbaa,
+        type: 3}
+      propertyPath: playerHitClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 565ca7209ef9bc1469e145cf36607f3e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afa8e078490d7574489fba29576abbaa, type: 3}

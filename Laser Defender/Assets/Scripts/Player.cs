@@ -23,12 +23,19 @@ public class Player : MonoBehaviour
 
 
     [Header("Projectile")]
-    // References
+    // Cached references
     [SerializeField] GameObject laserPrefab;
 
     // Projectile values
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.1f;
+
+    // Information about audio that is played when certain things happen to the player
+    [Header("Audio")]
+    [Tooltip("The sound that will be made when a player is destroyed")]
+    [SerializeField] AudioClip playerDestroyClip;
+    [Tooltip("The sound that will be made when a player is hit")]
+    [SerializeField] AudioClip playerHitClip;
 
     Coroutine firingCoroutine;
 
@@ -102,10 +109,12 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        
+
         // Protects against potential null references where the data may not exist
         if (!damageDealer) { return; }
-        
+
+        TriggerPlayerHitSound();
+
         ProcessHit(damageDealer);
     }
 
@@ -125,6 +134,21 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            TriggerPlayerDestroySound();
         }
+    }
+
+    private void TriggerPlayerHitSound()
+    {
+        if (health > 0)
+        {
+            AudioSource.PlayClipAtPoint(playerHitClip, transform.position);
+
+        }
+    }
+
+    private void TriggerPlayerDestroySound()
+    {
+        AudioSource.PlayClipAtPoint(playerDestroyClip, transform.position);
     }
 }
