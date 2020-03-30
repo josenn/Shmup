@@ -115,6 +115,7 @@ MonoBehaviour:
     type: 3}
   particleEffectPrefab: {fileID: 2346155108926312555, guid: fb3746126d8ea0a49882d8dc4c7cf9b8,
     type: 3}
+  durationOfExplosion: 1
 --- !u!58 &6883773493347907860
 CircleCollider2D:
   m_ObjectHideFlags: 0
