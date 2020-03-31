@@ -16,8 +16,7 @@ public class Enemy : MonoBehaviour
 {
     // Information about the enemy
     [Header("Enemy")]
-    [SerializeField] float health = 1000F;
-    [SerializeField] float projectileSpeed = 5f;
+    [SerializeField] float health = 1000f;
     [SerializeField] float shotTimer;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
@@ -25,18 +24,28 @@ public class Enemy : MonoBehaviour
     [Header("Projectile")]
     // References
     [SerializeField] GameObject laserPrefab;
+    [SerializeField] float projectileSpeed = 5.0f;
 
     [Header("Particle Effect")]
     [SerializeField] GameObject particleEffectPrefab;
     [SerializeField] float durationOfExplosion = 1.0f;
 
+    // Information about audio that is played when certain things happen to an enemy (the tooltips pretty much say it all)
     [Header("Audio")]
     [Tooltip("The sound that will be played when an enemy is destroyed")]
     [SerializeField] AudioClip enemyDestroyClip;
+    [Tooltip("The volume of the enemy destroy clip")] [RangeAttribute(0.0f, 1.0f)] // Because AudioSource volume is in the range 0.0-1.0
+    [SerializeField] float enemyDestroyClipVolume;
+
     [Tooltip("The sound that will be made when the enemy shoots")]
     [SerializeField] AudioClip enemyShootClip;
+    [Tooltip("The volume of the enemy shoot clip")] [RangeAttribute(0.0f, 1.0f)]
+    [SerializeField] float enemyShootClipVolume;
+
     [Tooltip("he sound that will be made when an enemy is hit by a player")]
     [SerializeField] AudioClip enemyHitClip;
+    [Tooltip("The volume of the enemy hit clip")] [RangeAttribute(0.0f, 1.0f)]
+    [SerializeField] float enemyHitClipVolume;
 
     // Start is called before the first frame update
     void Start()
@@ -118,22 +127,25 @@ public class Enemy : MonoBehaviour
         Destroy(explosion, durationOfExplosion);
     }
 
+    // Play the sound made when an enemy shoots
     private void TriggerEnemyShootSound(GameObject laser)
     {
-        AudioSource.PlayClipAtPoint(enemyShootClip, laser.transform.position);
+        AudioSource.PlayClipAtPoint(enemyShootClip, laser.transform.position, enemyShootClipVolume);
     }
 
     // Plays the sound made when an enemy is destroyed
     private void TriggerEnemyDestroySound()
     {
-        AudioSource.PlayClipAtPoint(enemyDestroyClip, transform.position);
+        AudioSource.PlayClipAtPoint(enemyDestroyClip, transform.position, enemyDestroyClipVolume);
     }
 
+    // Plays the sound made when an enemy is hit
     private void TriggerEnemyHitSound()
     {
+        // Don't play the hit sound if the enemy is destroyed by a hit
         if(health > 0)
         {
-            AudioSource.PlayClipAtPoint(enemyHitClip, transform.position);
+            AudioSource.PlayClipAtPoint(enemyHitClip, transform.position, enemyHitClipVolume);
         }
     }
 }
