@@ -101,7 +101,9 @@ MonoBehaviour:
   projectileSpeed: 20
   projectileFiringPeriod: 0.1
   playerDestroyClip: {fileID: 8300000, guid: 4e198abca881ea64dae7e65c312f4105, type: 3}
+  playerDestroyClipVolume: 1
   playerHitClip: {fileID: 8300000, guid: 565ca7209ef9bc1469e145cf36607f3e, type: 3}
+  playerHitClipVolume: 0.699
 --- !u!60 &738060707
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -1075,5 +1075,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8676217839558833149, guid: afa8e078490d7574489fba29576abbaa,
+        type: 3}
+      propertyPath: playerDestroyClipVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676217839558833149, guid: afa8e078490d7574489fba29576abbaa,
+        type: 3}
+      propertyPath: playerHitClipVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afa8e078490d7574489fba29576abbaa, type: 3}
