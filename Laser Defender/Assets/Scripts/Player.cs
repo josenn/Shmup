@@ -33,14 +33,14 @@ public class Player : MonoBehaviour
     // Information about audio that is played when certain things happen to the player
     [Header("Audio")]
     [Tooltip("The sound that will be made when the player is destroyed")]
-    [SerializeField] AudioClip playerDestroyClip;
+    [SerializeField] AudioClip playerIsDestroyedClip;
     [Tooltip("The volume of the player destroy clip")] [RangeAttribute(0.0f, 1.0f)]
-    [SerializeField] float playerDestroyClipVolume;
+    [SerializeField] float playerIsDestroyedClipVolume;
 
     [Tooltip("The sound that will be made when the player is hit")]
-    [SerializeField] AudioClip playerHitClip;
+    [SerializeField] AudioClip playerIsHitClip;
     [Tooltip("The volume of the player hit clip")] [RangeAttribute(0.0f, 1.0f)]
-    [SerializeField] float playerHitClipVolume;
+    [SerializeField] float playerIsHitClipVolume;
 
     Coroutine firingCoroutine;
 
@@ -148,13 +148,13 @@ public class Player : MonoBehaviour
     {
         if (health > 0)
         {
-            AudioSource.PlayClipAtPoint(playerHitClip, transform.position, playerHitClipVolume);
+            AudioSource.PlayClipAtPoint(playerIsHitClip, transform.position, playerIsHitClipVolume);
         }
     }
 
     // Play the sound that will be made when the player is destroyed
     private void TriggerPlayerDestroySound()
     {
-        AudioSource.PlayClipAtPoint(playerDestroyClip, transform.position, playerDestroyClipVolume);
+        AudioSource.PlayClipAtPoint(playerIsDestroyedClip, transform.position, playerIsDestroyedClipVolume);
     }
 }

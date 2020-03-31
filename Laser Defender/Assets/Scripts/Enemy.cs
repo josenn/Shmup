@@ -33,9 +33,9 @@ public class Enemy : MonoBehaviour
     // Information about audio that is played when certain things happen to an enemy (the tooltips pretty much say it all)
     [Header("Audio")]
     [Tooltip("The sound that will be played when an enemy is destroyed")]
-    [SerializeField] AudioClip enemyDestroyClip;
+    [SerializeField] AudioClip enemyIsDestroyedClip;
     [Tooltip("The volume of the enemy destroy clip")] [RangeAttribute(0.0f, 1.0f)] // Because AudioSource volume is in the range 0.0-1.0
-    [SerializeField] float enemyDestroyClipVolume;
+    [SerializeField] float enemyIsDestroyedClipVolume;
 
     [Tooltip("The sound that will be made when the enemy shoots")]
     [SerializeField] AudioClip enemyShootClip;
@@ -43,9 +43,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] float enemyShootClipVolume;
 
     [Tooltip("he sound that will be made when an enemy is hit by a player")]
-    [SerializeField] AudioClip enemyHitClip;
+    [SerializeField] AudioClip enemyIsHitClip;
     [Tooltip("The volume of the enemy hit clip")] [RangeAttribute(0.0f, 1.0f)]
-    [SerializeField] float enemyHitClipVolume;
+    [SerializeField] float enemyIsHitClipVolume;
 
     // Start is called before the first frame update
     void Start()
@@ -136,7 +136,7 @@ public class Enemy : MonoBehaviour
     // Plays the sound made when an enemy is destroyed
     private void TriggerEnemyDestroySound()
     {
-        AudioSource.PlayClipAtPoint(enemyDestroyClip, transform.position, enemyDestroyClipVolume);
+        AudioSource.PlayClipAtPoint(enemyIsDestroyedClip, transform.position, enemyIsDestroyedClipVolume);
     }
 
     // Plays the sound made when an enemy is hit
@@ -145,7 +145,7 @@ public class Enemy : MonoBehaviour
         // Don't play the hit sound if the enemy is destroyed by a hit
         if(health > 0)
         {
-            AudioSource.PlayClipAtPoint(enemyHitClip, transform.position, enemyHitClipVolume);
+            AudioSource.PlayClipAtPoint(enemyIsHitClip, transform.position, enemyIsHitClipVolume);
         }
     }
 }
