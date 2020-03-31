@@ -1077,12 +1077,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8676217839558833149, guid: afa8e078490d7574489fba29576abbaa,
         type: 3}
-      propertyPath: playerDestroyClipVolume
+      propertyPath: playerIsDestroyedClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e198abca881ea64dae7e65c312f4105, type: 3}
+    - target: {fileID: 8676217839558833149, guid: afa8e078490d7574489fba29576abbaa,
+        type: 3}
+      propertyPath: playerIsHitClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 565ca7209ef9bc1469e145cf36607f3e, type: 3}
+    - target: {fileID: 8676217839558833149, guid: afa8e078490d7574489fba29576abbaa,
+        type: 3}
+      propertyPath: playerIsDestroyedClipVolume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8676217839558833149, guid: afa8e078490d7574489fba29576abbaa,
         type: 3}
-      propertyPath: playerHitClipVolume
+      propertyPath: playerIsHitClipVolume
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
