@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8676217839558833149}
   - component: {fileID: 738060707}
   m_Layer: 8
-  m_Name: Player
+  m_Name: playerShipGreen01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 20
   projectileFiringPeriod: 0.1
+  playerDestroyClip: {fileID: 8300000, guid: 4e198abca881ea64dae7e65c312f4105, type: 3}
+  playerHitClip: {fileID: 8300000, guid: 565ca7209ef9bc1469e145cf36607f3e, type: 3}
 --- !u!60 &738060707
 PolygonCollider2D:
   m_ObjectHideFlags: 0
