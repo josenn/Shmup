@@ -120,25 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &22392636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6726413801624552514, guid: 47d38c438eb5c5141989fdfd56b2a89c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6726413801644125054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &22392640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22392636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3961917307cf6948b1c48b6a478d9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.3
 --- !u!4 &77932188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7366560459690807030, guid: 8ffc617451bf39e46bfb8ad488b3375e,
@@ -401,6 +382,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1650880897660770665
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6134507527283722320, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_Name
+      value: Level Loder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.035573125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.633691
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.808594
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984310210820322466, guid: 3d5abe51c4267e241a2285c1c9b8d355,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d5abe51c4267e241a2285c1c9b8d355, type: 3}
 --- !u!1001 &2131695556954453564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -604,11 +654,6 @@ PrefabInstance:
     - target: {fileID: 4857528145291795310, guid: ae82d9ef646ceb54ba2bdc3d671fdfcc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857528145291795311, guid: ae82d9ef646ceb54ba2bdc3d671fdfcc,
-        type: 3}
-      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
