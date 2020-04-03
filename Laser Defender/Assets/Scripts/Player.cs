@@ -44,10 +44,7 @@ public class Player : MonoBehaviour
 
     Coroutine firingCoroutine;
 
-    float xMin;
-    float xMax;
-    float yMin;
-    float yMax;
+    float xMin, xMax, yMin, yMax;
 
     // Start is called before the first frame update
     void Start()
@@ -73,8 +70,6 @@ public class Player : MonoBehaviour
         var newYPos = Mathf.Clamp((transform.position.y + deltaY), yMin, yMax);
 
         transform.position = new Vector2(newXPos, newYPos);
-
-        // TODO lots of refactoring and commenting
     }
 
     private void Fire()
@@ -93,7 +88,6 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            // Creating this as a gameobject
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
 
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
@@ -105,6 +99,7 @@ public class Player : MonoBehaviour
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
+        
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
@@ -138,6 +133,8 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)
         {
+            // Load game over screen
+            FindObjectOfType<LevelLoader>().LoadGameOver();
             Destroy(gameObject);
             TriggerPlayerDestroySound();
         }
