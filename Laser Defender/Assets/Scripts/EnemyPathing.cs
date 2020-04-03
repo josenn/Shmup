@@ -41,9 +41,6 @@ public class EnemyPathing : MonoBehaviour
     // Setters set values and getters get them
     public void SetWaveConfig(WaveConfig waveConfig)
     {
-        // When we use the this keyword we are referring to the script itself
-        // So this.waveConfig is referencing the waveConfig variable up at he top of the EnemyPathing script
-        // This is useful when using variables of the same name (like the parameter of this function)
         this.waveConfig = waveConfig;
     }
 
