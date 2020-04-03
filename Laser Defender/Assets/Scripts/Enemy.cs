@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour
         GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
 
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
-        TriggerEnemyShootSound(laser);
+        TriggerEnemyShootSound();
     }
 
     // "Other" means the game object that collided with this thing
@@ -128,15 +128,15 @@ public class Enemy : MonoBehaviour
     }
 
     // Play the sound made when an enemy shoots
-    private void TriggerEnemyShootSound(GameObject laser)
+    private void TriggerEnemyShootSound()
     {
-        AudioSource.PlayClipAtPoint(enemyShootClip, laser.transform.position, enemyShootClipVolume);
+        AudioSource.PlayClipAtPoint(enemyShootClip, Camera.main.transform.position, enemyShootClipVolume);
     }
 
     // Plays the sound made when an enemy is destroyed
     private void TriggerEnemyDestroySound()
     {
-        AudioSource.PlayClipAtPoint(enemyIsDestroyedClip, transform.position, enemyIsDestroyedClipVolume);
+        AudioSource.PlayClipAtPoint(enemyIsDestroyedClip, Camera.main.transform.position, enemyIsDestroyedClipVolume);
     }
 
     // Plays the sound made when an enemy is hit
@@ -145,7 +145,8 @@ public class Enemy : MonoBehaviour
         // Don't play the hit sound if the enemy is destroyed by a hit
         if(health > 0)
         {
-            AudioSource.PlayClipAtPoint(enemyIsHitClip, transform.position, enemyIsHitClipVolume);
+            // AudioClips can be softer or louder depending on their distance from the audio listener?
+            AudioSource.PlayClipAtPoint(enemyIsHitClip, Camera.main.transform.position, enemyIsHitClipVolume);
         }
     }
 }

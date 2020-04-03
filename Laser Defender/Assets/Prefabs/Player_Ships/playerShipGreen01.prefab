@@ -104,7 +104,7 @@ MonoBehaviour:
     type: 3}
   playerIsDestroyedClipVolume: 1
   playerIsHitClip: {fileID: 8300000, guid: 565ca7209ef9bc1469e145cf36607f3e, type: 3}
-  playerIsHitClipVolume: 1
+  playerIsHitClipVolume: 0.5
 --- !u!60 &738060707
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -148,13 +148,13 @@ public class Player : MonoBehaviour
     {
         if (health > 0)
         {
-            AudioSource.PlayClipAtPoint(playerIsHitClip, transform.position, playerIsHitClipVolume);
+            AudioSource.PlayClipAtPoint(playerIsHitClip, Camera.main.transform.position, playerIsHitClipVolume);
         }
     }
 
     // Play the sound that will be made when the player is destroyed
     private void TriggerPlayerDestroySound()
     {
-        AudioSource.PlayClipAtPoint(playerIsDestroyedClip, transform.position, playerIsDestroyedClipVolume);
+        AudioSource.PlayClipAtPoint(playerIsDestroyedClip, Camera.main.transform.position, playerIsDestroyedClipVolume);
     }
 }

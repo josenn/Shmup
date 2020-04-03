@@ -120,7 +120,7 @@ MonoBehaviour:
     type: 3}
   enemyIsDestroyedClipVolume: 1
   enemyShootClip: {fileID: 8300000, guid: 7ca4c00d2be96c444ab0fe09fe203f0d, type: 3}
-  enemyShootClipVolume: 0.357
+  enemyShootClipVolume: 0.2
   enemyIsHitClip: {fileID: 8300000, guid: 565ca7209ef9bc1469e145cf36607f3e, type: 3}
   enemyIsHitClipVolume: 0.308
 --- !u!58 &6883773493347907860
