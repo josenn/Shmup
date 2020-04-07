@@ -28,6 +28,7 @@ public class LevelLoader : MonoBehaviour
         // This is just an example of another way to load a scene
         // Normally we don't like string references because if we change the name things will mess up
         SceneManager.LoadScene("Game");
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     // Loads the game over screen
