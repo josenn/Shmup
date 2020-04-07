@@ -5,6 +5,8 @@
  * Which is a follow between a minTimeBetweenShots and a MaxTimeBetweenShots
  * 
  * They have the ability to fire as well as the ability to be hit and be destroyed
+ * 
+ * Thay also have a certain amount of points that they give the player when destroyed
 */
 
 using System;
@@ -15,16 +17,17 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Information about the enemy
-    [Header("Enemy")]
+    [Header("Enemy Stats")]
     [SerializeField] float health = 1000f;
-    [SerializeField] float shotTimer;
-    [SerializeField] float minTimeBetweenShots = 0.2f;
-    [SerializeField] float maxTimeBetweenShots = 3f;
+    [SerializeField] int scoreValue = 100;
 
     [Header("Projectile")]
     // References
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 5.0f;
+    [SerializeField] float shotTimer;
+    [SerializeField] float minTimeBetweenShots = 0.2f;
+    [SerializeField] float maxTimeBetweenShots = 3f;
 
     [Header("Particle Effect")]
     [SerializeField] GameObject particleEffectPrefab;
@@ -113,6 +116,7 @@ public class Enemy : MonoBehaviour
         // To fix cases of going into the negatives by mistake we add the < sign
         if (health <= 0)
         {
+            FindObjectOfType<GameSession>().AddToScore(scoreValue);
             Destroy(gameObject);
             TriggerParticleEffect();
             TriggerEnemyDestroySound();
