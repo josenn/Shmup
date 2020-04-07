@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     [SerializeField] float padding = 1f;
     [SerializeField] int health = 200;
 
-
     [Header("Projectile")]
     // Cached references
     [SerializeField] GameObject laserPrefab;
