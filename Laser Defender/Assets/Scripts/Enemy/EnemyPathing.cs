@@ -52,7 +52,7 @@ public class EnemyPathing : MonoBehaviour
         // How fast we want to move
         var movementThisFrame = waveConfig.GetMoveSpeed() * Time.deltaTime;
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
 
         // If you've made it to the target position head to the next one
         if (transform.position == targetPosition)

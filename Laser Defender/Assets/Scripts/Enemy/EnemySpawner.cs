@@ -15,11 +15,10 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return StartCoroutine(SpawnAllWaves());
         } 
-        while (looping); // Another way of saying while looping = true
+        while (looping);
     }
     private IEnumerator SpawnAllWaves()
     {
-        //TODO TRACE LATER
         for (int waveIndex = startingWave; waveIndex < waveConfigs.Count; waveIndex++ )
         {
             var currentWave = waveConfigs[waveIndex];

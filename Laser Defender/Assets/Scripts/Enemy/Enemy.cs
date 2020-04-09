@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shotTimer = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        ShotTimerReset();
     }
 
     // Update is called once per frame

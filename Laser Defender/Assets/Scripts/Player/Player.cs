@@ -153,4 +153,9 @@ public class Player : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(playerIsDestroyedClip, Camera.main.transform.position, playerIsDestroyedClipVolume);
     }
+
+    public int GetPlayerHealth()
+    {
+        return health;
+    }
 }
