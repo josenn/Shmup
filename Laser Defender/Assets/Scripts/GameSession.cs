@@ -1,4 +1,4 @@
-﻿/* This class controls game elements such as the players score
+﻿/* This class controls game elements such as the player's score
  * 
 */
 
